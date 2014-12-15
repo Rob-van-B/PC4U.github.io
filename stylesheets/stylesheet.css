@@ -53,7 +53,7 @@ body {
   color:#400000  ;
   background: #212121;
   font-size: 16px;
-  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  font-family: 'Lucida Grande','Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -255,6 +255,13 @@ form {
   background: #f2f2f2;
   padding: 20px;
 }
+
+slider {
+   padding:12px 15px;
+    margin:0 auto;
+    text-align:center;
+    overflow:hidden;
+}  
 
 /*******************************************************************************
 Full-Width Styles

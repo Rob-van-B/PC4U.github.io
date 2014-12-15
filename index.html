@@ -7,10 +7,10 @@
     <meta name="description" content="Rob-van-b.GitHub.io : PC4U // Perfect Crop For You // fetches geodata for personal crops recommodation">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-
- 
  
     <title>PC4U</title>
   </head>
@@ -58,7 +58,7 @@ $ python PC4U.py (lat = -12.774332) (lon = 51.2344)
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a> Wie lassen sich die Daten darstellen? </h3>
 
-<p>Zum Beispiel als Graph wie auf dem unten gezeigten Beispiels eines Acrisols in Brasilien </p>
+<p>Zum Beispiel als Graph wie auf dem unten gezeigten Beispiel eines Acrisols in Brasilien </p>
 <img src="images/hp_acrisol_brasilien.png" alt="acrisol" width="640" height="228" align = "center"  </p>
 <p>oder eines Cambisols in Italien, samt Klimadaten der Weltbank und Anbaustatistiken der Welternährungsorganisation (FAO)  </p>
 <img src="images/hp_cambisol_italien.png" alt="acrisol" width="640" height="228" align = "center"  </p>
@@ -71,24 +71,108 @@ $ python PC4U.py (lat = -12.774332) (lon = 51.2344)
 
 <img src="images/tomato.gif" alt="tomato" width="250" height="360" align = "left" style="float:left"> </p>
 
- <form>
- <p style="text-align:right" > Light 
-  <input type="range" name="Light" min="0" max="10">
-	<p style="text-align:right" > Water 
-  <input type="range" name="Water" min="0" max="10">
-	 <p style="text-align:right" >  pH 
-  <input type="range" name="pH" min="0" max="10">
- <p style="text-align:right" > NPK 
-  <input type="range" name="NPK" min="0" max="10">
-	<p style="text-align:right" > Temperature
-  <input type="range" name="Temperature" min="0" max="10">
-	 <p style="text-align:right" >  Sand // Clay 
-  <input type="range" name="Sand Clay" min="0" max="10">
-	<p style="text-align:right" > Drought Resistant
-  <input type="range" name="Drought Resistant" min="0" max="10">
-	 <p style="text-align:right" >  Labor Intensive 
-  <input type="range" name="Labor Intensive" min="0" max="10">
+ <form  action="range_form" method="get" accept-charset="utf-8" class="cf">
 
+
+<output for=light  style="float:right" id=light> 5</output> 
+<input type=range min=0 max=12 style="float:right" value=5 id=light step=1 onchange="outputUpdate(value)"> 
+<label for=light style="float:right">Light (hours/day)</label> 
+<p></p>
+<br/>
+ <script>
+function outputUpdate(vol) {
+  document.querySelector('#light').value = vol;}
+</script>
+
+<output for=water  style="float:right" id=water> 5</output> 
+<input type=range min=0 max=10 style="float:right" value=5 id=water step=1 onchange="outputUpdate2(value)"> 
+<label for=water style="float:right">Water (liter/day)</label> 
+<p></p>
+<br/>
+
+<script>
+function outputUpdate2(vol) {
+  document.querySelector('#water').value = vol;}
+</script>
+
+<output for=pH  style="float:right" id=pH>5.5</output> 
+<input type=range min=3.5 max=8.0 style="float:right" value=5.5 id=pH step=0.1 onchange="outputUpdate3(value)"> 
+<label for=pH style="float:right">pH-optimum</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate3(vol) {
+  document.querySelector('#pH').value = vol;}
+</script>
+
+<output for=fertilizer  style="float:right" id=fertilizer>0.5</output> 
+<input type=range min=0 max=1 style="float:right" value=0.5 id=fertilizer step=0.1 onchange="outputUpdate4(value)"> 
+<label for=fertilizer style="float:right">Fertilizer (0=low/1=high)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate4(vol) {
+  document.querySelector('#fertilizer').value = vol;}
+</script>
+
+
+<output for=temperature  style="float:right" id=temperature>20</output> 
+<input type=range min=0 max=30 style="float:right" value=20 id=temperature step=1 onchange="outputUpdate5(value)"> 
+<label for=temperature style="float:right">Temperature(°C)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate5(vol) {
+  document.querySelector('#temperature').value = vol;}
+</script>
+
+<output for=sand  style="float:right" id=sand>20</output> 
+<input type=range min=0 max=100 style="float:right" value=20 id=sand step=1 onchange="outputUpdate6(value)"> 
+<label for=sand style="float:right">Sand content (%)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate6(vol) {
+  document.querySelector('#sand').value = vol;}
+</script>
+
+<output for=clay  style="float:right" id=clay>20</output> 
+<input type=range min=0 max=100 style="float:right" value=20 id=clay step=1 onchange="outputUpdate7(value)"> 
+<label for=clay style="float:right">Clay content (%)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate7(vol) {
+  document.querySelector('#clay').value = vol;}
+</script>
+
+
+<output for=drought  style="float:right" id=drought>50</output> 
+<input type=range min=0 max=100 style="float:right" value=50 id=drought step=1 onchange="outputUpdate8(value)"> 
+<label for=drought style="float:right">Drought resistant (%) </label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate8(vol) {
+  document.querySelector('#drought').value = vol;}
+</script>
+
+<output for=labor  style="float:right" id=labor>50</output> 
+<input type=range min=0 max=100 style="float:right" value=50 id=drought step=1 onchange="outputUpdate9(value)"> 
+<label for=drought style="float:right">Labor intensive(%) </label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate9(vol) {
+  document.querySelector('#labor').value = vol;}
+</script>
 
 
 
@@ -103,23 +187,105 @@ $ python PC4U.py (lat = -12.774332) (lon = 51.2344)
 
 <img src="images/cassava.jpg" alt="tomato" width="250" height="360" align = "left" style="float:left"> </p>
  <form>
- <p style="text-align:right" > Light 
-  <input type="range" name="Light2" min="0" max="10">
-	<p style="text-align:right" > Water 
-  <input type="range" name="Water2" min="0" max="10">
-	 <p style="text-align:right" >  pH 
-  <input type="range" name="pH2" min="0" max="10">
- <p style="text-align:right" > NPK 
-  <input type="range" name="NPK2" min="0" max="10">
-	<p style="text-align:right" > Temperature
-  <input type="range" name="Temperature2" min="0" max="10">
-	 <p style="text-align:right" >  Sand // Clay 
-  <input type="range" name="Sand Clay2" min="0" max="10">
-	<p style="text-align:right" > Drought Resistant
-  <input type="range" name="Drought Resistant2" min="0" max="10">
-	 <p style="text-align:right" >  Labor Intensive 
-  <input type="range" name="Labor Intensive2" min="0" max="10">
+<output for=light2  style="float:right" id=light2> 5</output> 
+<input type=range min=0 max=12 style="float:right" value=5 id=light2 step=1 onchange="outputUpdate10(value)"> 
+<label for=light2 style="float:right">Light (hours/day)</label> 
+<p></p>
+<br/>
+ <script>
+function outputUpdate10(vol) {
+  document.querySelector('#light2').value = vol;}
+</script>
 
+<output for=water2  style="float:right" id=water2> 5</output> 
+<input type=range min=0 max=10 style="float:right" value=5 id=water2 step=1 onchange="outputUpdate11(value)"> 
+<label for=water2 style="float:right">Water (liter/day)</label> 
+<p></p>
+<br/>
+
+<script>
+function outputUpdate11(vol) {
+  document.querySelector('#water2').value = vol;}
+</script>
+
+<output for=pH2  style="float:right" id=pH2>5.5</output> 
+<input type=range min=3.5 max=8.0 style="float:right" value=5.5 id=pH2 step=0.1 onchange="outputUpdate12(value)"> 
+<label for=pH2 style="float:right">pH-optimum</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate12(vol) {
+  document.querySelector('#pH2').value = vol;}
+</script>
+
+<output for=fertilizer2  style="float:right" id=fertilizer2>0.5</output> 
+<input type=range min=0 max=1 style="float:right" value=0.5 id=fertilizer2 step=0.1 onchange="outputUpdate13(value)"> 
+<label for=fertilizer2 style="float:right">Fertilizer (0=low/1=high)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate13(vol) {
+  document.querySelector('#fertilizer2').value = vol;}
+</script>
+
+
+<output for=temperature2  style="float:right" id=temperature2>20</output> 
+<input type=range min=0 max=30 style="float:right" value=20 id=temperature2 step=1 onchange="outputUpdate14(value)"> 
+<label for=temperature2 style="float:right">Temperature(°C)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate14(vol) {
+  document.querySelector('#temperature2').value = vol;}
+</script>
+
+<output for=sand2  style="float:right" id=sand2>20</output> 
+<input type=range min=0 max=100 style="float:right" value=20 id=sand2 step=1 onchange="outputUpdate15(value)"> 
+<label for=sand2 style="float:right">Sand content (%)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate15(vol) {
+  document.querySelector('#sand2').value = vol;}
+</script>
+
+<output for=clay2  style="float:right" id=clay2>20</output> 
+<input type=range min=0 max=100 style="float:right" value=20 id=clay2 step=1 onchange="outputUpdate16(value)"> 
+<label for=clay2 style="float:right">Clay content (%)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate16(vol) {
+  document.querySelector('#clay2').value = vol;}
+</script>
+
+
+<output for=drought2  style="float:right" id=drought2>50</output> 
+<input type=range min=0 max=100 style="float:right" value=50 id=drought2 step=1 onchange="outputUpdate17(value)"> 
+<label for=drought2 style="float:right">Drought resistant (%) </label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate17(vol) {
+  document.querySelector('#drought2').value = vol;}
+</script>
+
+<output for=labor2  style="float:right" id=labor2>50</output> 
+<input type=range min=0 max=100 style="float:right" value=50 id=drought2 step=1 onchange="outputUpdate18(value)"> 
+<label for=labor2 style="float:right">Labor intensive(%) </label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate18(vol) {
+  document.querySelector('#labor2').value = vol;}
+</script>
 
 <div style="clear:both;"></div>
  <h4 style="float:left">  Cassava </h4>
@@ -131,23 +297,105 @@ $ python PC4U.py (lat = -12.774332) (lon = 51.2344)
 
 <img src="images/cabbage.gif" alt="tomato" width="250" height="360" align = "left" style="float:left"> </p>
  <form>
- <p style="text-align:right" > Light 
-  <input type="range" name="Light3" min="0" max="10">
-	<p style="text-align:right" > Water 
-  <input type="range" name="Water3" min="0" max="10">
-	 <p style="text-align:right" >  pH 
-  <input type="range" name="pH3" min="0" max="10">
- <p style="text-align:right" > NPK 
-  <input type="range" name="NPK3" min="0" max="10">
-	<p style="text-align:right" > Temperature
-  <input type="range" name="Temperature3" min="0" max="10">
-	 <p style="text-align:right" >  Sand // Clay 
-  <input type="range" name="Sand Clay3" min="0" max="10">
-	<p style="text-align:right" > Drought Resistant
-  <input type="range" name="Drought Resistant3" min="0" max="10">
-	 <p style="text-align:right" >  Labor Intensive 
-  <input type="range" name="Labor Intensive3" min="0" max="10">
+<output for=light3  style="float:right" id=light3> 5</output> 
+<input type=range min=0 max=12 style="float:right" value=5 id=light3 step=1 onchange="outputUpdate19(value)"> 
+<label for=light3 style="float:right">Light (hours/day)</label> 
+<p></p>
+<br/>
+ <script>
+function outputUpdate19(vol) {
+  document.querySelector('#light3').value = vol;}
+</script>
 
+<output for=water3  style="float:right" id=water3> 5</output> 
+<input type=range min=0 max=10 style="float:right" value=5 id=water3 step=1 onchange="outputUpdate20(value)"> 
+<label for=water3 style="float:right">Water (liter/day)</label> 
+<p></p>
+<br/>
+
+<script>
+function outputUpdate20(vol) {
+  document.querySelector('#water3').value = vol;}
+</script>
+
+<output for=pH3  style="float:right" id=pH3>5.5</output> 
+<input type=range min=3.5 max=8.0 style="float:right" value=5.5 id=pH3 step=0.1 onchange="outputUpdate21(value)"> 
+<label for=pH3 style="float:right">pH-optimum</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate21(vol) {
+  document.querySelector('#pH3').value = vol;}
+</script>
+
+<output for=fertilizer3  style="float:right" id=fertilizer3>0.5</output> 
+<input type=range min=0 max=1 style="float:right" value=0.5 id=fertilizer3 step=0.1 onchange="outputUpdate22(value)"> 
+<label for=fertilizer3 style="float:right">Fertilizer (0=low/1=high)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate22(vol) {
+  document.querySelector('#fertilizer3').value = vol;}
+</script>
+
+
+<output for=temperature3  style="float:right" id=temperature3>20</output> 
+<input type=range min=0 max=30 style="float:right" value=20 id=temperature3 step=1 onchange="outputUpdate23(value)"> 
+<label for=temperature3 style="float:right">Temperature(°C)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate23(vol) {
+  document.querySelector('#temperature3').value = vol;}
+</script>
+
+<output for=sand3  style="float:right" id=sand3>20</output> 
+<input type=range min=0 max=100 style="float:right" value=20 id=sand3 step=1 onchange="outputUpdate24(value)"> 
+<label for=sand3 style="float:right">Sand content (%)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate24(vol) {
+  document.querySelector('#sand3').value = vol;}
+</script>
+
+<output for=clay3  style="float:right" id=clay3>20</output> 
+<input type=range min=0 max=100 style="float:right" value=20 id=clay3 step=1 onchange="outputUpdate25(value)"> 
+<label for=clay3 style="float:right">Clay content (%)</label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate25(vol) {
+  document.querySelector('#clay3').value = vol;}
+</script>
+
+
+<output for=drought3  style="float:right" id=drought3>50</output> 
+<input type=range min=0 max=100 style="float:right" value=50 id=drought3 step=1 onchange="outputUpdate26(value)"> 
+<label for=drought3 style="float:right">Drought resistant (%) </label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate26(vol) {
+  document.querySelector('#drought3').value = vol;}
+</script>
+
+<output for=labor3  style="float:right" id=labor3>50</output> 
+<input type=range min=0 max=100 style="float:right" value=50 id=drought3 step=1 onchange="outputUpdate27(value)"> 
+<label for=labor3 style="float:right">Labor intensive(%) </label>
+<p></p>
+<br/>
+
+<script>
+function outputUpdate27(vol) {
+  document.querySelector('#labor3').value = vol;}
+</script>
 
 <div style="clear:both;"></div>
  <h4 style="float:left">  Cabbage </h4>

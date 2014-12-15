@@ -23,7 +23,7 @@
           <a id="forkme_banner" href="https://github.com/Rob-van-B">View on GitHub</a>
 
           <h1 id="project_title">PC4U </h1>
-          <h2 id="project_tagline">// Perfect Crop 4 You // geodata for personal crop recommodation</h2>
+          <h2 id="project_tagline">// Perfect Crop 4 You // fetching geodata for personal crop recommodation</h2>
 
         </header>
     </div>
@@ -32,15 +32,15 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h3>
-<a id="welcome" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wilkkommen bei PC4U .</h3>
+<a id="welcome" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wilkkommen bei PC4U.</h3>
 
-<p>Unsere Idee ist so einfach wie bestechend. Wir nutzen freie Geodaten APIs (online Datenbanken) um für jeden Ort der Welt die TopTen der für den Standort am besten geeignetsten Kulturpflanzen vorzuschlagen.</p>
+<p>Unsere Idee ist so einfach wie bestechend. Wir nutzen die neuen, freien Geodaten APIs (online Datenbanken) um für jeden Ort der Welt die TopTen der für den Standort am besten geeignetsten Kulturpflanzen vorzuschlagen. Im Browser oder auf dem Handy. Kostenlos und Open-Sour</p>
 
 
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wo stehen wir jetzt?</h3>
 
-<p>Auf dem unten gezeigten Schritt. Mensch muss Programmierer sein um die API Abfragen stellen zu können und diese Daten anschließend auszuwerten, aber es funktioniert:</p>
+<p>Auf der unten gezeigten Beta Version. Mensch muss Programmierer sein um die API Abfragen stellen und diese Daten anschließend auszuwerten zu können. Aber es funktioniert. Wir können bereits räumliche Daten von 6 verschiedenen internationale agierenden Behörden, Universitäten und Organisationen abrufen.</p>
 
 <pre><code>$ cd /home/PC4U/python/
 $ python PC4U.py (lat = -12.774332) (lon = 51.2344)
@@ -58,16 +58,18 @@ $ python PC4U.py (lat = -12.774332) (lon = 51.2344)
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a> Wie lassen sich die Daten darstellen? </h3>
 
-<p>Zum Beispiel als Graph wie auf dem unten gezeigten Beispiel eines Acrisols in Brasilien </p>
-<img src="images/hp_acrisol_brasilien.png" alt="acrisol" width="640" height="228" align = "center"  </p>
-<p>oder eines Cambisols in Italien, samt Klimadaten der Weltbank und Anbaustatistiken der Welternährungsorganisation (FAO)  </p>
-<img src="images/hp_cambisol_italien.png" alt="acrisol" width="640" height="228" align = "center"  </p>
+<p>Zum Beispiel als Graph wie auf dem unten gezeigten Beispiel eines Acrisols (toniger Boden) in Amazonien </p>
+<img src="images/hp_acrisol_brasilien.png" alt="acrisol" width="768" height="285" align = "center"  </p>
+<p>oder eines Cambisols (Braunerde) in Italien, samt Klimadaten der Weltbank und Anbaustatistiken der FAO.
+Da die diversen Standortbedigungen also bekannt sind (die Bodenkarte liegt z.B. mit der Auflösung von einen 1x1km vor) 
+können wir diese Informationen mit den optimalen Wachstumsbedingungen mit hunderten Arten Obst und Gemüse verschneiden, um die optimalen Sorten für den jeweiligen Standort zu ermitteln.  </p>
+<img src="images/hp_cambisol_italien.png" alt="acrisol" width="768" height="285" align = "center"  </p>
 
 
 <h3>
 <a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wo wollen wir hin?</h3>
 
-<p>Zu einer benutzerfreundlichen Oberfläche. Zu einer einfachen Bedienung im Browser oder auf dem Handy. Zu einer interaktiven Open-Source Datenbank, welche Empfehlungen auf Basis der Schwarmintelligenz ihrer Nutzer mit einer Prise Expertenwissen mischt. Zu einem offenen Projekt. In allen Sprachen. Für alle Menschen. Kostenlos und Werbefrei. </p>
+<p>Zu einer benutzerfreundlichen Oberfläche. Zu einer einfachen Bedienung im Browser oder auf dem Handy. Zu einer Open-Source Datenbank und einem smarten Algorithmus der Empfehlungen auspricht, welcher er auf Basis der Schwarmintelligenz seiner Nutzer trifft und mit einer Prise Expertenwissen mischt. Wir wollen hin zu einem offenen Projekt. In allen Sprachen. Für alle Menschen. Kostenlos und Werbefrei. Join us! </p>
 
 <img src="images/tomato.gif" alt="tomato" width="250" height="360" align = "left" style="float:left"> </p>
 
@@ -108,7 +110,7 @@ function outputUpdate3(vol) {
 
 <output for=fertilizer  style="float:right" id=fertilizer>0.5</output> 
 <input type=range min=0 max=1 style="float:right" value=0.5 id=fertilizer step=0.1 onchange="outputUpdate4(value)"> 
-<label for=fertilizer style="float:right">Fertilizer (0=low/1=high)</label>
+<label for=fertilizer style="float:right">Fertilization (0=low/1=high)</label>
 <p></p>
 <br/>
 
@@ -221,7 +223,7 @@ function outputUpdate12(vol) {
 
 <output for=fertilizer2  style="float:right" id=fertilizer2>0.5</output> 
 <input type=range min=0 max=1 style="float:right" value=0.5 id=fertilizer2 step=0.1 onchange="outputUpdate13(value)"> 
-<label for=fertilizer2 style="float:right">Fertilizer (0=low/1=high)</label>
+<label for=fertilizer2 style="float:right">Fertilization (0=low/1=high)</label>
 <p></p>
 <br/>
 
@@ -331,7 +333,7 @@ function outputUpdate21(vol) {
 
 <output for=fertilizer3  style="float:right" id=fertilizer3>0.5</output> 
 <input type=range min=0 max=1 style="float:right" value=0.5 id=fertilizer3 step=0.1 onchange="outputUpdate22(value)"> 
-<label for=fertilizer3 style="float:right">Fertilizer (0=low/1=high)</label>
+<label for=fertilizer3 style="float:right">Fertilization (0=low/1=high)</label>
 <p></p>
 <br/>
 

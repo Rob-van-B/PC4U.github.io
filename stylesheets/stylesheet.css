@@ -29,7 +29,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 label {
-font-size: 75%;
+font-size: 100%;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -81,7 +81,10 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 28px;
+  text-decoration: underline
+
+
 }
 
 h4 {
@@ -106,7 +109,7 @@ footer p {
 
 a {
   text-decoration: none;
-  color: #007edf;
+  color: #e8f5e9;
   text-shadow: none;
 
   transition: color 0.5s ease;
@@ -139,7 +142,7 @@ strong {
 img {
   position: relative;
   margin: 0 auto;
-  max-width: 739px;
+  max-width: 759px;
   padding: 5px;
   margin: 10px 0 10px 0;
   border: 1px solid #ebebeb;
@@ -164,7 +167,7 @@ pre, code {
   width: 100%;
   color: #222;
   background-color: #fff;
-
+  max-width: 748px;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 14px;
 
@@ -279,7 +282,7 @@ Full-Width Styles
 }
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 768px;
   padding: 20px 10px;
   margin: 0 auto;
 }

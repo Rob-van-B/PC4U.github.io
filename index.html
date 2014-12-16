@@ -65,7 +65,7 @@ $ python PC4U.py (lat = -12.774332) (lon = 51.2344)
 <a id="beispielvideo" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beispielvideo gefällig? </h3>
 
 
- <video width="769" height="471" controls>
+ <video width="768" height="471" controls>
   <source src="videos/pc4u.mp4" type="video/mp4">
   <source src="videos/pc4u.ogg" type="video/ogg">
 Your browser does not support the video tag.
@@ -323,9 +323,23 @@ function outputUpdate18(vol) {
 </form>
 <BR>
 
-
-
-
+<h3>
+<a id="anwendung" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Und wenn wir all diese Daten gesammelt haben? </h3>
+<p>Dann können wir die Geoinformationen über die eingesendete Koordinate mit den optimalen Wachstums-bedingungen der Pflanzen abgleichen und erhalten für jede Pflanze eine 
+errechnete Eignung, welche als Proxy genutzt werden kann, um zu ermitteln, ob sich der Anbau am jeweiligen Standort lohnt. Anschließend zeigen wir dem Nutzer die TopTen der am besten geegnetsten Pflanzen 
+und geben Auskunft über die Berechnungsgrundlage welche zu diesem Ergbniss führt. [Beispiel: Cassva: pH Wert Optimum 5.6 / Standort X pH Wert = 5.5 (9 von 10 Punkten)] Hier noch ein in Python geschriebenes 
+minimal Bespiel, um die Eignung einer Pflanze abhängig vom pH-Wert, der Temperatur und dem Niederschlag zu berechnen</p>
+<pre><code>
+def calculations(temp, pH, precipitation ):
+	plant.temp_score = (plant.pref_temp / temp)
+	plant.pH_score = (plant.pref_pH / pH)
+	plant.water_score = (plant.pref_water / precipitation) 
+ 	plant.total_score = (plant.pH_score + plant.temp_score + plant.water_score)
+	total_score.update({plant.name: plant.total_score})
+	return total_score
+	
+</code></pre>
+<p>In unserem Beispiel ist also der gute alte Kohl am besten für den Standort geeignet. Na das is doch was. </p>
 <img src="images/cabbage.gif" alt="cabbage" width="250" height="360" align = "left" style="float:left"> 
  <form  action="range_form" method="get" accept-charset="utf-8" class="cf">
 <output for=light3  style="float:right" id=light3> 10</output> 

@@ -174,6 +174,7 @@ pre, code {
   max-width: 748px;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 14px;
+  margin-bottom: 20px;
 
   border-radius: 2px;
   -moz-border-radius: 2px;
@@ -288,7 +289,7 @@ Full-Width Styles
   position: relative;
   max-width: 768px;
   padding: 20px 10px;
-  margin: 0 auto;
+  margin:  auto;
 }
 .noshadow {
 	-webkit-box-shadow: none;
@@ -315,10 +316,10 @@ Full-Width Styles
 #header_wrap {
   background: #388e3c;
   background: -moz-linear-gradient(top, #388e3c , #4caf50);
-  background: -webkit-linear-gradient(top, #388e3c, #388e3c);
-  background: -ms-linear-gradient(top, #4a148c, #4a148c);
-  background: -o-linear-gradient(top, #4a148c, #4a148c);
-  background: linear-gradient(top, #4a148c, #4a148c);
+  background: -webkit-linear-gradient(top, #388e3c, #4caf50);
+  background: -ms-linear-gradient(top, #388e3c, #4caf50);
+  background: -o-linear-gradient(top, #388e3c, #4caf50);
+  background: linear-gradient(top, #388e3c, #4caf50);
 }
 
 #header_wrap .inner {
@@ -382,7 +383,7 @@ Full-Width Styles
 
 #main_content_wrap {
   background: #fffde7;
-  border-top: 1px solid #111;
+  border-top: 0px solid #111;
   border-bottom: 1px solid #111;
 }
 

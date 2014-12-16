@@ -42,13 +42,21 @@ für den Standort am besten geeignetsten Kulturpflanzen vorzuschlagen. Im Browse
  <h3>
 <a id="howitworks" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wie funktioniert PC4U?</h3>
  <ul>
-  <li>Wir rufen freie georeferenzierte Daten von internatinalen Organisationen ab</li>
-  <li>Die Daten werden zu Klassen zusammengefügt und visualisiert</li>
+  <li>Der PC4U Nutzer schickt uns einzig seine Koordinate. Sonst nix.</li>
+  <li>Wir rufen freie georeferenzierte Daten von internationalen Organisationen ab</li>
+  <li>Die Daten werden von uns zu Klassen zusammengefügt und visualisiert</li>
   <li>Wir zeigen dem Nutzer unsere klassifizierten Annahmen über seinen Standort</li>
   <li>Der Nutzer kann diese Annahmen korrigieren sofern sie nicht zutreffen</li>
   <li>Unser Algorithmus vergleicht die klassifierten Geodaten mit unser offenen Pflanzendatenbank</li>
-  <li>Die TopTen der optimal geeigneten Pflanzen werden zurück an Nutzer gesendet</li>
+  <li>Die TopTen der optimal geeigneten Pflanzen werden zurück an Nutzer gespielt</li>
   <li>Um 100%ige Transparenz zu gewährleisten visualisieren wir auch die Berechnungsgrundlage</li>
+</ul>
+ <h3>
+<a id="benefit" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Was ist das Besondere an PC4U?</h3>
+ <ul>
+  <li>PC4U unterstützt den Weg zu einer diversifizierten und nachhaltigen Landwirtschaft  </li>
+  <li>PC4U ermöglicht Menschen angemessen auf Klimaveränderungen reagieren zu können </li>
+  <li>PC4U verhilft dazu Pflanzen mit hohen Vitamgehalten effektiv gegen Mangelernährung einzusetzen</li>
 
 </ul> 
 
@@ -333,9 +341,15 @@ function outputUpdate18(vol) {
 <h3>
 <a id="anwendung" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Und wenn all diese Daten erhoben sind? </h3>
 <p>Dann können wir die Geoinformationen über die eingesendete Koordinate mit den optimalen Wachstums-bedingungen der Pflanzen abgleichen und erhalten für jede Pflanze eine 
-errechnete Eignung. Dieser Wert dient als "Proxy", um zu ermitteln, ob sich der Anbau am jeweiligen Standort lohnt. Anschließend zeigen wir dem Nutzer die TopTen der am besten geeignetsten Pflanzen 
-und geben Auskunft über die Berechnungsgrundlage die zu diesem Ergebnis führte. [Beispiel: Cassva: pH Wert Optimum 5.6 / Standort X pH Wert = 5.5 (9 von 10 Punkten)] Hier noch ein in Python geschriebenes 
-minimal Bespiel, um die Eignung einer Pflanze abhängig vom pH-Wert, der Temperatur und dem Niederschlag zu analysieren</p>
+errechnete Eignung. Dieser Wert dient als "Proxy" um zu ermitteln, ob der der Anbau der jeweiligen Pflanze am gegebenen Standort sinnvoll erscheint. Anschließend zeigen wir dem Nutzer die TopTen der am besten geeignetsten Pflanzen 
+und geben Auskunft über die Berechnungsgrundlage die zu diesem Ergebnis führte.<br>
+</p>
+<p><i>Beispiel Cassva: pH Wert Optimum 5.6 / Standort X pH Wert = 5.5. Zwischenergebnis: 9 von 10 Punkten</i></p>
+
+<h3>
+<a id="anwendung" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kann der Nutzer Einfluß auf die Bewertung der Pflanzen nehmen?</h3>
+Ja. Zum Beispiel in dem er Eigenschaften wie die Dürreresitenz oder den Vitamin Gehalt als "prioritär" einstuft, oder in dem er auswählt, sich besonders für arbeitsextensiven oder besonders ertragreichen Kulturpflanzen zu interessieren.
+Folgend noch ein in Python geschriebenes Minimalbeispiel, um die Eignung einer Pflanze abhängig vom pH-Wert, der Temperatur und dem Niederschlag zu analysieren</p>
 <pre><code>
 def calculations(temp, pH, precipitation ):
 	plant.temp_score = (plant.pref_temp / temp)

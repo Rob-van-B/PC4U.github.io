@@ -349,13 +349,25 @@ function outputUpdate18(vol) {
 errechnete Eignung. Dieser Wert dient als "Proxy" um zu ermitteln, ob der der Anbau der jeweiligen Pflanze am gegebenen Standort sinnvoll erscheint. Anschließend zeigen wir dem Nutzer die TopTen der am besten geeignetsten Pflanzen 
 und geben Auskunft über die Berechnungsgrundlage die zu diesem Ergebnis führte.<br>
 </p>
-<p><i>Beispiel Cassva: pH Wert Optimum 5.6 / Standort X pH Wert = 5.5. Zwischenergebnis: 9 von 10 Punkten</i></p>
+<p><em>Beispiel Cassva: pH Wert Optimum 5.6 // Standort X: pH Wert = 5.5. Zwischenergebnis: 9 von 10 Punkten</em></p>
 
 <h3>
 <a id="anwendung" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Kann der Nutzer Einfluß auf die Bewertung der Pflanzen nehmen?</h3>
-Ja. Zum Beispiel in dem er Eigenschaften wie die Dürreresitenz oder den Vitamin Gehalt als "prioritär" einstuft, oder in dem er auswählt, sich besonders für arbeitsextensive oder ertragreiche intensive Kulturpflanzen zu interessieren.
-Folgend noch ein in Python geschriebenes Minimalbeispiel, um die Eignung einer Pflanze abhängig vom pH-Wert, der Temperatur und dem Niederschlag zu analysieren</p>
-<pre><code>
+Ja. Zum Beispiel in dem er Eigenschaften wie die Dürreresitenz oder den Vitamin Gehalt als "prioritär" einstuft. Oder in dem er auswählt, sich besonders für arbeitsextensive oder ertragreiche und intensive Kulturpflanzen zu interessieren.
+Hinzu kommen Kriterien wie Vorzucht oder Lagerungsfähigkeit.  
+<br><br>
+<h3>
+<a id="anwendung" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Können wir das mal an einem Beispiel aufzeigen?</h3>
+Na klar, aber von Benutzerfreundlichkeit ist hier noch keine Spur. Folgend also ein in Python geschriebenes Minimalbeispiel, welches die von uns in entwickelten Module <em>PlantClass</em> und <em>GepApiQuery</em> läd und dann eine Abfrage 
+zu der Koordinate <em>51.342176, 12.328135</em> (Sachsen / D) stellt. Anschließend wird die Eignung einer Pflanze abhängig vom pH-Wert, der Temperatur und dem Niederschlag am Standort berechnet</p>
+<pre><code>#!/usr/bin/env python
+
+import GeoApiQuery
+import PlantClass
+
+temp, pH, precipitation = GeoApiQuery(51.342176, 12.328135)
+plant = PlantClass(temp = 21.3, pH = 5.1, pecipitation = 430) 
+
 def calculations(temp, pH, precipitation ):
 	plant.temp_score = (plant.pref_temp / temp)
 	plant.pH_score = (plant.pref_pH / pH)
@@ -363,7 +375,9 @@ def calculations(temp, pH, precipitation ):
  	plant.total_score = (plant.pH_score + plant.temp_score + plant.water_score)
 	total_score.update({plant.name: plant.total_score})
 	return total_score
-	
+
+if __name__ == '__main__':
+	calculations()	
 </code></pre>
 <p>In dem Beispiel ist also der gute alte Kohl optimal für unseren Standort geeignet. Na das is doch was. </p>
 <img src="images/cabbage.gif" alt="cabbage" width="250" height="360" align = "left" style="float:left"> 

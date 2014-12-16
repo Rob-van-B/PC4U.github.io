@@ -135,13 +135,7 @@ em {
 strong {
   font-weight: bold;
 }
-img_head {
-  position: relative;
-  margin: 0 auto;
-  max-width: 759px;
-  padding: 5px;
-  margin: 10px 0 10px 0;
-  border: 0px solid #ebebeb;
+
 }
 img {
   position: relative;
@@ -302,7 +296,7 @@ Full-Width Styles
   display: block;
   position: absolute;
   top:0;
-  right: 10px;
+  right: 00px;
   z-index: 10;
   padding: 10px 50px 10px 10px;
   color: #400000 ;
@@ -323,7 +317,7 @@ Full-Width Styles
 }
 
 #header_wrap .inner {
-  padding: 5px 200px 30px 10px;
+  padding: 10px 180px 5px 40px;
 }
 
 #project_title {
@@ -341,7 +335,13 @@ Full-Width Styles
   background: none;
   text-shadow: #111 0px 0px 10px;
 }
-
+#project_tagline2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  background: none;
+  text-shadow: #111 0px 0px 10px;
+}
 #downloads {
   position: absolute;
   width: 210px;

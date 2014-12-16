@@ -155,7 +155,7 @@ img {
 p img {
   display: inline;
   margin: 0;
-  padding: 0;
+  padding: 100;
   vertical-align: middle;
   text-align: center;
   border: none;
@@ -335,12 +335,7 @@ Full-Width Styles
   background: none;
   text-shadow: #111 0px 0px 10px;
 }
-#project_tagline2 {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 300;
-  background: none;
-  text-shadow: #111 0px 0px 10px;
+
 }
 #downloads {
   position: absolute;

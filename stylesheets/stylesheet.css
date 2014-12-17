@@ -145,20 +145,26 @@ img {
   margin: 10px 0 10px 0;
   border: 0px solid #ebebeb;
 
-  box-shadow: 0 0 5px #ebebeb;
-  -webkit-box-shadow: 0 0 5px #ebebeb;
-  -moz-box-shadow: 0 0 5px #ebebeb;
-  -o-box-shadow: 0 0 5px #ebebeb;
-  -ms-box-shadow: 0 0 5px #ebebeb;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
 p img {
   display: inline;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 5;
   vertical-align: middle;
   text-align: center;
   border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 0 10px rgba(0,0,0,.1);
+
 }
 
 pre, code {
@@ -259,6 +265,11 @@ td {
 form {
   background: #ffffff;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
 slider {
@@ -291,6 +302,16 @@ Full-Width Styles
 	box-shadow: none;
 
 }
+
+.shadow {
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 0 10px rgba(0,0,0,.1);
+
+}
+
 
 #forkme_banner {
   display: block;

@@ -59,6 +59,7 @@ body {
   font-family: 'Lucida Grande','Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  
 }
 
 h1, h2, h3,h4, h5, h6 {
@@ -82,6 +83,11 @@ h2 {
 
 h3 {
   font-size: 26px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
 h4 {
@@ -98,6 +104,12 @@ h6 {
 
 p {
   margin: 10px 0 15px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
 }
 
 footer p {
@@ -119,6 +131,7 @@ a {
   -o-transition: text-shadow 0.5s ease;
   -ms-transition: color 0.5s ease;
   -ms-transition: text-shadow 0.5s ease;
+  
 }
 
 a:hover, a:focus {text-decoration: underline;}
@@ -215,6 +228,11 @@ ul {
   list-style-position: inside;
   list-style: disc;
   padding-left: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
 ol {
